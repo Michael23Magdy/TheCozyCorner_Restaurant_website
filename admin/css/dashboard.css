@@ -72,6 +72,15 @@ aside li:hover a,.current-page{
     color: var(--accent-color-white);
 }
 
+@media (max-width: 676px){
+    .container {
+        margin-left: -250px;
+    }
+    #sidebar {
+        margin-left: -250px;
+    }
+}
+
 /* end side bar */
 
 .content {
@@ -117,6 +126,40 @@ main>h2 {
     color: var(--Primary-color-green);
     font-size: 30px;
     margin-left: 20px;
+}
+
+@keyframes notification{
+    0% {
+        top: -80px;          
+    }
+    20% {
+        top: 20px;      
+    }
+    80% {
+        top: 20px;
+    }
+    100% {
+        top: -80px; 
+    }
+}
+
+.fail {
+    background-color: red;
+    color: white;
+}
+.success {
+    background-color: green;
+    color: white;
+}
+.msg {
+    position: absolute;
+    padding: 20px;
+    border-radius: 100px;
+    text-align: center;
+    top: -80px;
+    left: 50%;
+    animation: notification 5s ease-in-out;
+    max-width: 380px;
 }
 
 .btn-add {
