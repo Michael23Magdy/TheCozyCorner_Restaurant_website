@@ -62,7 +62,9 @@
 
 
             if(isset($_FILES['image_name']['name']) && $_FILES['image_name']['error'] === UPLOAD_ERR_OK){
-                $image_name = $_FILES['image_name']['name'];
+                $original_name = $_FILES['image_name']['name'];
+                $ext = end(explode('.',$original_name));
+                $image_name = "food_category_". date('Ymd_His') . '.' . $ext;
                 $source_path = $_FILES['image_name']['tmp_name'];
                 $distination = '../images/categories/'.$image_name;
 
