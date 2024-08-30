@@ -93,7 +93,7 @@
                 $res = mysqli_query($conn,$sql);
                 // Execute the statement
                 if ($res) {
-                    $_SESSION['stat'] = "update successful!";
+                    $_SESSION['stat'] = "Admin Updated Succesfully";
                     $_SESSION['success'] = true;
                     header("location:".SITE_URL.'admin/manage-admins.php?&name=admins');
                 } else {
