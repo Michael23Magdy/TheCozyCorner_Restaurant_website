@@ -36,14 +36,13 @@
                 <label>Password: </label>
                 <input type="password" name="password" id="password" class="input" placeholder="Enter new or same password">
                 <div class="buttons">
-                    <input type="submit" value="update admin" class="submit">
-                    <input type="reset" value="reset" class="reset">
+                    <input type="submit" value="update admin" class="submit set">
+                    <input type="reset" value="reset" class="reset unset">
                 </div>
             </form>
         </div>
     </main>
 
-<?php include('components/footer.php') ?>
 
 <?php
     // Check the connection
@@ -122,3 +121,5 @@
         }
     }
 ?>
+
+<?php include('components/footer.php') ?>
