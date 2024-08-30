@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<?php include('login_check.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,7 @@
                 <li><a href="manage-categories.php?name=categories" <?php if(!empty($_GET['name']) && $_GET['name']== "categories") echo "class='current-page'"?>>Categories</a></li>
                 <li><a href="manage-food.php?name=food" <?php if(!empty($_GET['name']) && $_GET['name']== "food") echo "class='current-page'"?>>Food</a></li>
                 <li><a href="manage-orders.php?name=orders" <?php if(!empty($_GET['name']) && $_GET['name']== "orders") echo "class='current-page'"?>>Orders</a></li>
+                <li><a href="../logout.php" >Logout</a></li>
             </ul>
         </aside>
         <div class="content">
@@ -39,11 +41,5 @@
                 <h1>Dashboard</h1>
             </header>
 <?php 
-    if(isset($_SESSION['stat'])){
-        $color = "fail";
-        if($_SESSION['success']) $color = "success";
-        echo "<p class=\"{$color} msg\"> <i class=\"fa-solid fa-bell\"></i> {$_SESSION['stat']} </p>";
-        unset($_SESSION['stat']);
-        unset($_SESSION['success']);
-    }
+    include('notification.php');
 ?>

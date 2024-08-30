@@ -1,0 +1,132 @@
+/* overall page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Primary-color-green: #556B2F;
+    --Primary-color-red: #E2725B;
+    --Primary-color-brown: #8B4513;
+    --accent-color-white: #f2f3ed;
+    --accent-color-yellow: #DAA520;
+    --accent-color-navy: #2C3E50;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('../images/background1.jpg');
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    background-color: var(--accent-color-white);
+    color: var(--Primary-color-brown);
+    justify-content: center;
+    border-radius: 20px;
+    padding: 7px;
+}
+
+form {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form h3 {
+    margin: 8px;
+    font-size: 30px;
+}
+form input:not(.btn){
+    display: block;
+    width: 320px;
+}
+
+
+form input, form a{
+    width: 80%;
+    height: 40px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    text-align: center;
+    margin: 10px;
+}
+form .input {
+    box-shadow: inset 0px 0px 4px var(--Primary-color-green);
+    background-color: #eee;
+}
+form .input:focus{
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 6px var(--Primary-color-red), 0px 0px 10px var(--accent-color-yellow);
+}
+
+form .btn {
+    background-color: var(--Primary-color-brown);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 100px;
+    border: none;
+    color: var(--accent-color-white);
+    text-decoration: none;
+}
+
+form a {
+    background-color: var(--accent-color-white);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 100px;
+    border: solid 2px var(--Primary-color-brown);
+    color: var(--Primary-color-brown);
+    text-decoration: none;
+}
+
+
+img {
+    width: 500px;
+}
+
+
+@keyframes notification{
+    0% {
+        top: -80px;          
+    }
+    20% {
+        top: 20px;      
+    }
+    80% {
+        top: 20px;
+    }
+    100% {
+        top: -80px; 
+    }
+}
+
+.fail {
+    background-color: red;
+    color: white;
+}
+.success {
+    background-color: green;
+    color: white;
+}
+.msg {
+    position: absolute;
+    padding: 20px;
+    border-radius: 100px;
+    text-align: center;
+    top: -80px;
+    left: 50%;
+    animation: notification 5s ease-in-out;
+    max-width: 380px;
+}

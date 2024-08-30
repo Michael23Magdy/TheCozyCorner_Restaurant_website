@@ -8,18 +8,18 @@
             if(mysqli_num_rows($res_check)!=1){
                 $_SERVER['stat'] = "Admin not found";
                 $_SERVER['success'] = false;
-                header(SITE_URL."admin/manage-admins.php?name='admin'");
+                header(SITE_URL."admin/manage-admins.php?name=admins");
             }
         } else {
             $_SERVER['stat'] = "Error";
             $_SERVER['success'] = false;
-            header(SITE_URL."admin/manage-admins.php?name='admin'");
+            header(SITE_URL."admin/manage-admins.php?name=admins");
         }
         $admin = mysqli_fetch_assoc($res_check);
     } else {
         $_SERVER['stat'] = "Admin not found";
         $_SERVER['success'] = false;
-        header(SITE_URL."admin/manage-admins.php?name='admin'");
+        header(SITE_URL."admin/manage-admins.php?name=admins");
     }
     
 ?>
@@ -87,7 +87,7 @@
                 // Hash the password
                 $sql = "UPDATE users set username='{$username}', email='{$email}'";
                 if($password!=""){
-                    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                    $hashed_password = md5($password);
                     $sql = $sql.", password_hash='{$hashed_password}'";
                 }
                 $sql = $sql."WHERE user_id = {$id}";
@@ -96,18 +96,18 @@
                 if ($res) {
                     $_SESSION['stat'] = "update successful!";
                     $_SESSION['success'] = true;
-                    header("location:".SITE_URL.'admin/manage-admins.php?&name=admin');
+                    header("location:".SITE_URL.'admin/manage-admins.php?&name=admins');
                 } else {
                     $_SESSION['stat'] = "Error: " . mysqli_stmt_error($stmt);
                     $_SESSION['success'] = false;
 
-                    header("location:".SITE_URL.'admin/update-admin.php?id='.$id.'&name=admin');
+                    header("location:".SITE_URL.'admin/update-admin.php?id='.$id.'&name=admins');
                 }
 
             } else {
                 $_SESSION['stat'] = $errors[0];
                 $_SESSION['success'] = false;
-                header("location:".SITE_URL.'admin/update-admin.php?id='.$id.'&name=admin');
+                header("location:".SITE_URL.'admin/update-admin.php?id='.$id.'&name=admins');
             }
         
             
@@ -118,7 +118,7 @@
                 $_SESSION['stat'] = "Error: " . $e->getMessage();
             }
             $_SESSION['success'] = false;
-            header("location:".SITE_URL.'admin/update-admin.php?id='.$id.'&name=admin');
+            header("location:".SITE_URL.'admin/update-admin.php?id='.$id.'&name=admins');
         }
     }
 ?>

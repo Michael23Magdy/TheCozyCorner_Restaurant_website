@@ -1,26 +1,39 @@
-<?php include('components/sidebar_header.php') ?>
+<?php 
+    include('config/constants.php') ;
+    include('admin/Components/notification.php') ;
+?>
 
-    <main>
-        <h2><i class="fa-duotone fa-solid fa-user"></i></i> Add Admin</h2>
-        <div class="form-container">
-            <form action="" method="POST">
-                <h3>Fill new admin's data</h3>
-                
-                <label>Usernmae: </label>
-                <input type="text" name="username" id="username" class="input" placeholder="Enter New Admin Usernmae">
-                <label>Email: </label>
-                <input type="email" name="email" id="email" class="input" placeholder="Ex: name@email.example">
-                <label>Password: </label>
-                <input type="password" name="password" id="password" class="input" placeholder="Enter a strong password">
-                <div class="buttons">
-                    <input type="submit" value="add admin" class="submit">
-                    <input type="reset" value="reset" class="reset">
-                </div>
-            </form>
-        </div>
-    </main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
 
-<?php include('components/footer.php') ?>
+    <!-- Render all elements normally -->
+    <link rel="stylesheet" href="../css/normalize.css">
+
+    <!-- main styling -->
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="../css/all.min.css">
+</head>
+<body>
+    <div class="container" style="flex-direction: row-reverse;">
+        <form action="" method="POST">
+            <h3>---- REGISTER ----</h3>
+            <input type="text" name="username" id="username" placeholder="Enter a username" class="input">
+            <input type="email" name="email" id="email" placeholder="Enter your email" class="input">
+            <input type="password" name="password" id="password" placeholder="Enter a password"class="input">
+            <input type="submit" value="REGISTER" class="btn">
+            <a href="login.php" class="link"> LOGIN </a>
+        </form>
+        <img src="images/logo.jpeg" alt="The Cozy Corner Logo">
+    </div>
+</body>
+</html>
 
 <?php
     // Check the connection
@@ -61,7 +74,7 @@
             $username = sanitize_input($_POST["username"]);
             $email = sanitize_input($_POST["email"]);
             $password = sanitize_input($_POST["password"]);
-            $role = "admin";
+            $role = "user";
     
             $errors = validate_input($username, $email, $password);
     
@@ -78,13 +91,13 @@
                     $_SESSION['success'] = true;
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
-                    header("location:".SITE_URL.'admin/manage-admins.php?&name=admin');
+                    header("location:".SITE_URL);
                 } else {
                     $_SESSION['stat'] = "Error: " . mysqli_stmt_error($stmt);
                     $_SESSION['success'] = false;
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
-                    header("location:".SITE_URL.'admin/add-admin.php?&name=admin');
+                    header("location:".SITE_URL.'register.php');
                 }
 
             } else {
@@ -101,7 +114,7 @@
                 $_SESSION['stat'] = "Error: " . $e->getMessage();
             }
             $_SESSION['success'] = false;
-            header("location:".SITE_URL.'admin/add-admin.php?&name=admin');
+            header("location:".SITE_URL.'register.php');
         }
     }
 ?>

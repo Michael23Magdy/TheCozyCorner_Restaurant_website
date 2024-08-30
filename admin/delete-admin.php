@@ -14,10 +14,10 @@
                 $_SESSION['success'] = false;
             }
         }
-        header('location:'.SITE_URL."/admin/manage-admins.php");
+        header('location:'.SITE_URL."/admin/manage-admins.php?name=admins");
     } catch (mysqli_sql_exception $e){
         $_SESSION['stat'] = "failed to delete admin";
         $_SESSION['success'] = false;
-        header('location:'.SITE_URL."/admin/manage-admins.php");
+        header('location:'.SITE_URL."/admin/manage-admins.php?name=admins");
     }
 ?>
