@@ -256,10 +256,10 @@ form h3 {
     margin-bottom: 10px;
 }
 
-form .input{
+form .input,textarea{
     width: 80%;
     height: 40px;
-    border-radius: 100px;
+    border-radius: 25px;
     border: none;
     outline: none;
     box-shadow: inset 0px 0px 4px var(--Primary-color-green);
@@ -267,11 +267,42 @@ form .input{
     text-align: center;
     margin: 10px;
 }
+form textarea{
+    padding: 15px;
+    height: 80px;
+    resize: vertical; /* Allow only vertical resizing */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    word-wrap: break-word; /* Break long words to fit within the textarea */
+}
 
 form .input:focus{
     border: none;
     outline: none;
     box-shadow: 0px 0px 6px var(--Primary-color-red), 0px 0px 10px var(--accent-color-yellow);
+}
+
+form .btn{
+    text-align: center;
+    padding: 10px;
+    border-radius: 100px;
+    margin: 10px;
+    width: 48%;
+    cursor: pointer;
+}
+
+form #fileName {
+    text-align: center;
+    padding: 10px;
+    border-radius: 100px;
+    border: none;
+    background-color: var(--Primary-color-green);
+    color: var(--accent-color-white);
+    width: 48%;
+    margin: 10px;
+}
+
+form #image_name{
+    display: none;
 }
 
 form .buttons {
@@ -281,18 +312,24 @@ form .buttons {
 }
 form .buttons .submit,
 form .buttons .reset{
+    cursor: pointer;
     padding: 10px;
     border-radius: 100px;
     width: 48%;
     /* flex: 1; */
 }
-form .buttons .submit{
-    border: none;
+
+form .radio-btn input {
+    display: none;
+}
+
+form .set{
     background-color: var(--accent-color-navy);
+    border: 2px solid var(--accent-color-navy);
     color: var(--accent-color-white);
 }
 
-form .buttons .reset{
+form .unset{
     background-color: var(--accent-color-white);
     border: 2px solid var(--accent-color-navy);
     color: var(--accent-color-navy);

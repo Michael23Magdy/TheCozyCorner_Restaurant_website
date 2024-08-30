@@ -1,10 +1,9 @@
 <?php include('components/sidebar_header.php') ?>
-
     <main>
         <h2><i class="fa-solid fa-basket-shopping"></i> Manage Categories</h2>
         <br>
         <div class="database">
-            <a href="" class="btn-add"> <i class="fa-solid fa-plus"></i> Add Category</a>
+            <a href="add-category.php?name=categories" class="btn-add"> <i class="fa-solid fa-plus"></i> Add Category</a>
             <table>
                 <thead>
                     <tr>
