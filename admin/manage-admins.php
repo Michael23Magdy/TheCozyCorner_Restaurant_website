@@ -19,14 +19,14 @@
                         $res = mysqli_query($conn, $sql);
 
                         function print_admin_row($SN, $username, $email,$id){
-                            $url_del = SITE_URL."admin/delete-admin.php?id={$id}&name='admin'";
-                            $url_upd = SITE_URL."admin/update-admin.php?id={$id}&name='admin'";
+                            $url_del = SITE_URL."admin/delete-admin.php?id={$id}&name=admins";
+                            $url_upd = SITE_URL."admin/update-admin.php?id={$id}&name=admins";
                             echo "
                                 <tr>
-                                    <td>{$SN}</td>
+                                    <td class=\"center_tbl_col\">{$SN}</td>
                                     <td>{$username}</td>
                                     <td>{$email}</td>
-                                    <td>
+                                    <td class=\"center_tbl_col\">
                                         <a href=\"{$url_upd}\"><i class=\"fa-solid fa-pen\"></i></a>
                                         <a href=\"{$url_del}\"><i class=\"fa-solid fa-delete-left \"></i></a>
                                     </td>
@@ -44,6 +44,10 @@
                                     $email = $row['email'];
                                     print_admin_row($SN++,$username,$email,$id);
                                 }
+                            } else {
+                                echo "
+                                    <tr> <td colspan=\"6\"> no data added </td> <tr> 
+                                ";
                             }
                         }
                     ?>

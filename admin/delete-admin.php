@@ -1,13 +1,13 @@
-
 <?php
     try{
         include('../config/constants.php');
+        include('login_check.php');
         $id = $_GET['id'];
         $sql = "DELETE FROM users WHERE user_id = {$id}";
         $res = mysqli_query($conn,$sql);
         if($res == true){
             if(mysqli_affected_rows($conn)>0){
-                $_SESSION['stat'] = "Admin deleted Successfully";
+                $_SESSION['stat'] = "Admin deleted successfully";
                 $_SESSION['success'] = true;
             } else {
                 $_SESSION['stat'] = "Admin not found";
