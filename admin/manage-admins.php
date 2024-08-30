@@ -1,10 +1,4 @@
 <?php include('components/sidebar_header.php') ?>
-    <?php 
-        if(isset($_SESSION['stat'])){
-            echo "<p class=\"success msg\"> *{$_SESSION['stat']} </p>";
-            unset($_SESSION['stat']);
-        }
-    ?>
     <main>
         <h2><i class="fa-duotone fa-solid fa-user"></i></i> Manage Admins</h2>
         <br>
@@ -24,15 +18,17 @@
                         $sql = "SELECT user_id,username,email FROM users WHERE role='admin'";
                         $res = mysqli_query($conn, $sql);
 
-                        function print_admin_row($SN, $username, $email){
+                        function print_admin_row($SN, $username, $email,$id){
+                            $url_del = SITE_URL."admin/delete-admin.php?id={$id}&name='admin'";
+                            $url_upd = SITE_URL."admin/update-admin.php?id={$id}&name='admin'";
                             echo "
                                 <tr>
                                     <td>{$SN}</td>
                                     <td>{$username}</td>
                                     <td>{$email}</td>
                                     <td>
-                                        <i class=\"fa-solid fa-pen\"></i>
-                                        <i class=\"fa-solid fa-delete-left \"></i>
+                                        <a href=\"{$url_upd}\"><i class=\"fa-solid fa-pen\"></i></a>
+                                        <a href=\"{$url_del}\"><i class=\"fa-solid fa-delete-left \"></i></a>
                                     </td>
                                 </tr>
                             ";
@@ -46,11 +42,12 @@
                                     $id = $row['user_id'];
                                     $username = $row['username'];
                                     $email = $row['email'];
-                                    print_admin_row($SN++,$username,$email);
+                                    print_admin_row($SN++,$username,$email,$id);
                                 }
                             }
                         }
                     ?>
+                    
                 </tbody>
             </table>
         </div>

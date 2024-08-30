@@ -1,10 +1,5 @@
 <?php include('components/sidebar_header.php') ?>
-<?php 
-    if(isset($_SESSION['stat'])){
-        echo "<p class=\"fail msg\"> *{$_SESSION['stat']} </p>";
-        unset($_SESSION['stat']);
-    }
-?>
+
     <main>
         <h2><i class="fa-duotone fa-solid fa-user"></i></i> Add Admin</h2>
         <div class="form-container">
@@ -80,18 +75,21 @@
                 // Execute the statement
                 if (mysqli_stmt_execute($stmt)) {
                     $_SESSION['stat'] = "Registration successful!";
+                    $_SESSION['success'] = true;
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
-                    header("location:".SITE_URL.'admin/manage-admins.php');
+                    header("location:".SITE_URL.'admin/manage-admins.php?&name=admin');
                 } else {
                     $_SESSION['stat'] = "Error: " . mysqli_stmt_error($stmt);
+                    $_SESSION['success'] = false;
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
-                    header("location:".SITE_URL.'admin/add-admin.php');
+                    header("location:".SITE_URL.'admin/add-admin.php?&name=admin');
                 }
 
             } else {
-                $_SESSION['stat'] = $errors;
+                $_SESSION['stat'] = $errors[0];
+                $_SESSION['success'] = false;
                 mysqli_close($conn);
             }
         
@@ -102,7 +100,8 @@
             } else {
                 $_SESSION['stat'] = "Error: " . $e->getMessage();
             }
-            header("location:".SITE_URL.'admin/add-admin.php');
+            $_SESSION['success'] = false;
+            header("location:".SITE_URL.'admin/add-admin.php?&name=admin');
         }
     }
 ?>
