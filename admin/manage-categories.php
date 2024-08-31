@@ -17,7 +17,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT * FROM categories ORDER BY Featured DESC, active DESC";
+                        $sql = "SELECT * FROM categories ORDER BY active DESC, Featured DESC";
                         $res = mysqli_query($conn, $sql);
 
                         function print_category_row($SN, $title, $image_name,$featured,$active,$id){
