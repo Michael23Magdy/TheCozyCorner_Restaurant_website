@@ -70,7 +70,7 @@
             $title = sanitize_input($_POST["title"]);
             $description = sanitize_input($_POST["description"]);
             $price = sanitize_input($_POST['price']);
-            $category_id = !empty($_POST['category_id']) ? sanitize_input($_POST['category_id']) : NULL;
+            $category_id = !empty($_POST['food_category']) ? sanitize_input($_POST['food_category']) : NULL;
             $featured = isset($_POST['featured-box'])? 1 : 0;
             $active = isset($_POST['active-box'])? 1 : 0;
             $image_name = "";        

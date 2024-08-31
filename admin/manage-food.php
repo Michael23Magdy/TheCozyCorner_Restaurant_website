@@ -39,8 +39,8 @@
                         $res = mysqli_query($conn, $sql);
 
                         function print_category_row($SN, $title, $image_name, $price, $category_name, $featured,$active,$id){
-                            $url_del = SITE_URL."admin/delete-food.php?id={$id}&name=foods";
-                            $url_upd = SITE_URL."admin/update-food.php?id={$id}&name=foods";
+                            $url_del = SITE_URL."admin/delete-food.php?id={$id}&name=food";
+                            $url_upd = SITE_URL."admin/update-food.php?id={$id}&name=food";
                             $featured = $featured? "YES" : "NO";
                             $active = $active? "YES" : "NO";
                             if(empty($category_name)) $category_name = "no category selected";
@@ -48,7 +48,7 @@
                             <tr>
                             <td class=\"center_tbl_col\">{$SN}</td>
                             <td>{$title}</td>
-                            <td class=\"center_tbl_col\">{$price}</td>
+                            <td class=\"center_tbl_col\">\$ {$price}</td>
                             ";
                             if(empty($image_name))
                                 echo "<td class=\"center_tbl_col\">no image</td>";
