@@ -366,7 +366,8 @@ footer {
 }
 
 footer span {
-    color: var(--Primary-color-red);
+    color: var(--accent-color-yellow);
+    font-weight: bold;
 }
 
 /* end footer  */
