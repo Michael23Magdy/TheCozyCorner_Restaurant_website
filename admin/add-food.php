@@ -23,7 +23,7 @@
                 <div class="buttons">
                     <input type="number" name="price" id="price" min="0" step="0.01" placeholder="add price" class="input">
                     <select name="food_category" id="food_category" class="input">
-                        <option value="NULL">no category</option>
+                        <option value="">no category</option>
                         <?php 
                             $sql = "SELECT id,title,active FROM categories ORDER BY active DESC,featured DESC";
                             $res = mysqli_query($conn,$sql);
@@ -70,7 +70,7 @@
             $title = sanitize_input($_POST["title"]);
             $description = sanitize_input($_POST["description"]);
             $price = sanitize_input($_POST['price']);
-            $category_id = sanitize_input($_POST['food_category']);
+            $category_id = !empty($_POST['category_id']) ? sanitize_input($_POST['category_id']) : NULL;
             $featured = isset($_POST['featured-box'])? 1 : 0;
             $active = isset($_POST['active-box'])? 1 : 0;
             $image_name = "";        
