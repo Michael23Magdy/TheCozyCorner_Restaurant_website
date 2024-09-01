@@ -48,7 +48,7 @@
                 ...formObject,  // Spread form data
                 order // Add order object if it exists
             };
-            alert(JSON.stringify(combinedData, null, 2));
+            // alert(JSON.stringify(combinedData, null, 2));
             // Send combined data to the server
             fetch('process-order.php', {
                 method: 'POST',
@@ -71,7 +71,9 @@
             });
 
             localStorage.removeItem('order');
-            window.location.href = 'index.php';
+
+            
+            setTimeout(()=>{window.location.href = 'purchase-details.php';},1000);
 
         }
 

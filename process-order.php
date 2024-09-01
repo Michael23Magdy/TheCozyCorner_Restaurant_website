@@ -28,16 +28,24 @@
 
         if($res){
             $last_id = mysqli_insert_id($conn);
+            $total_price = 0;
             foreach ($data['order']['items'] as $item) {
                 $id = $item['id'];
                 $name = $item['name'];
                 $quantity = $item['quantity'];
                 $price = $item['price'] * $quantity;
+                $total_price += $price;
 
                 $sql2 = "INSERT INTO order_details (order_id, food_id, quantity, price)
                         VALUES ({$last_id}, {$id}, {$quantity}, {$price})";
                 $res2 = mysqli_query($conn, $sql2);
             }
+
+            $sql3 = "UPDATE orders
+                    SET total_price = {$total_price}
+                    WHERE order_id = {$last_id}
+                    ";
+            $res3 =  mysqli_query($conn, $sql3);
         }
     
         // Return success response
