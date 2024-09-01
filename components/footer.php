@@ -17,3 +17,4 @@
         </p>
     </div>
 </footer>
+<script src="JS/order.js"></script>

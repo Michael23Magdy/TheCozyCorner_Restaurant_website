@@ -241,11 +241,13 @@ header .icons a:hover{
 
 /* featured */
 
-.featured .container{
+.featured .container,
+.order .container{
     padding: 40px 2px;
 }
 
-.featured h2 {
+.featured h2,
+.order h2 {
     text-align: center;
     font-family: 'Sansita Swashed';
     padding: 50px;
@@ -365,6 +367,119 @@ header .icons a:hover{
     background-color: var(--accent-color-white);
     color:var(--Primary-color-green);
 }
+
+
+.featured .order-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    justify-content: center;
+    gap: 10px;
+}
+
+.featured .order-items .order-item {
+    display: flex;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--accent-color-white);
+    align-items: center;
+    box-shadow: 2px 3px 5px var(--accent-color-navy);
+}
+.featured .order-items .order-item .image-container {
+    width: 100px;
+    height: 100px;
+    overflow: hidden; /* Hide the overflow to crop the image */
+    position: relative;
+    border-radius: 20px;
+}
+
+.featured .order-items .order-item .image-container img {
+    width: 100%;
+}
+
+.featured .order-items .order-item .details {
+    padding-left: 15px;
+
+}
+
+.featured .order-items .order-item .details h3{
+    font-size: 25px;
+    color: var(--Primary-color-green);
+}
+.featured .order-items .order-item .details h4{
+    color: white;
+    background-color: var(--Primary-color-green);
+    border-radius: 50px;
+    width: fit-content;
+    padding: 2px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.featured .order-items .order-item .details .price-div {
+    display: flex;
+    padding: 10px 0px;
+    gap: 5px;
+
+}
+.featured .order-items .order-item .details .price-div input[type="number"] {
+    padding: 5px 10px;
+    width: 80px;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+}
+.featured .order-items .order-item .details .price-div .delete-item {
+    padding: 5px 10px;
+    width: 70px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--Primary-color-red);
+    color: var(--accent-color-white);
+    font-weight: bold;
+    text-align: center;
+}
+
+.featured .order-form {
+    width: 320px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.featured .order-form a,
+.featured .order-form input {
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.featured .order-form input[type="text"],
+.featured .order-form input[type="tel"]{
+    background-color: var(--accent-color-white);
+}
+
+.featured .order-form input[type="submit"]{
+    background-color: var(--Primary-color-green);
+    color: var(--accent-color-white);
+}
+.featured .order-form a{
+    text-decoration: none;
+    background-color: var(--Primary-color-red);
+    color: var(--accent-color-white);
+}
+
+.featured .order-form p {
+    color: var(--Primary-color-green);
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 .qoute-section{
     background-color: var(--accent-color-white);

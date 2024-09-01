@@ -1,7 +1,6 @@
 <?php
     function print_food_card($title, $image_name, $price, $description, $id){
-        $order_now = SITE_URL."admin/delete-food.php?id={$id}&name=food";
-        $add_to_order = SITE_URL."admin/update-food.php?id={$id}&name=food";
+        $url =  isset($_SESSION['username'])? "": SITE_URL."login.php";
         if(empty($category_name)) $category_name = "no category selected";
         $image_url = empty($image_name)? "https://placehold.co/250x300?text=No+Image": "images/food/{$image_name}";
         echo "
@@ -12,8 +11,8 @@
                     <p class=\"price\">$ {$price}</p>
                     <p class=\"des\">{$description}</p>
                     <div>
-                        <a href=\"\">Order now</a>
-                        <a href=\"\">Add to Order</a>
+                        <a href=\"{$url}\" class=\"order-now\" data-id=\"{$id}\" data-title=\"{$title}\" data-price=\"{$price}\" data-img=\"{$image_name}\">Order now</a>
+                        <a href=\"{$url}\" class=\"add-to-order\" data-id=\"{$id}\" data-title=\"{$title}\" data-price=\"{$price}\" data-img=\"{$image_name}\">Add to Order</a>
                     </div>
                 </div>
             </div>
