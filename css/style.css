@@ -157,6 +157,14 @@ header .icons a{
     box-shadow: 3px 3px 5px black;
 }
 
+header .icons a span {
+    display: none;
+    font-size: 23px;
+}
+
+header .icons a:hover span{
+    display: inline;
+}
 header .icons a:hover{
     color: var(--accent-color-white);
     background-color: var(--accent-color-navy);
@@ -472,16 +480,16 @@ header .icons a:hover{
 }
 /* end about us section */
 
-footer {
+/* footer {
     display: flex;
     height: 50px;
     background-color: var(--accent-color-navy);
     color: var(--accent-color-white);
     justify-content: center;
     align-items: center;
-}
+} */
 
-footer span {
+#about-us .copy-right span {
     color: var(--accent-color-yellow);
     font-weight: bold;
 }

@@ -25,24 +25,7 @@
 </head>
 <body>
     <div class="welcome">
-        <header>
-            <div class="container">
-                <div class="brand">
-                    <img src="images/logo.png" alt="LOGO" class="logo">
-                    <h1 class="websit_name">THE COZY<br>CORNER</h1>
-                </div>
-                <ul class="navigation">
-                    <li><a href="" class="set"> Food Menu </a></li>
-                    <li><a href="" class="set"> Categories</a></li>
-                    <li><a href="#about-us" class="set"> About US</a></li>
-                </ul>
-                <div class="icons">
-                    <a href=""><i class="fa-solid fa-search" onclick=""></i></a>
-                    <a href=""><i class="fa-solid fa-utensils"></i></a>
-                    <a href=""><i class="fa-solid fa-circle-user"></i></a>
-                </div>
-            </div>
-        </header>
+        <?php include('components/header.php') ?>
         <section>
             <div class="container">
                 <div>
@@ -70,7 +53,7 @@
         </div>
     </section>
 
-    <section class="qoute-section">
+    <section class="qoute-section" id="search-section">
         <div class="container">
             <div>
                 <p class="qoute">"search you favourite food"</p>
@@ -101,30 +84,6 @@
             <img class="side-img" src="images/chef.png" alt="chef">
         </div>
     </section>
-
-    <section id="about-us">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Founded in 2010, The Cozy Corner started as a small family-owned restaurant with a big dream: to bring comfort and joy through delicious food. Over the years, we've grown, but our mission remains the same. Our dedication to quality ingredients and exceptional service has made us a beloved destination for both locals and visitors alike. From our humble beginnings to now, every dish we serve tells the story of our passion and commitment.</p>
-        
-            <h3>Contact Us</h3>
-            <p>Got questions? We'd love to hear from you!</p>
-            <ul class="contact-info">
-                <li><strong>Phone:</strong> (123) 456-7890</li>
-                <li><strong>Email:</strong> info@thecozycorner.com</li>
-                <li><strong>Address:</strong> 123 Cozy Street, Food Town, FL</li>
-            </ul>
-            <!-- <img src="images/chef_2.png" alt="About Us Image"> -->
-        </div>
-    </section>
-    
-    
-    
-    <footer>
-        <p>
-            &copy all rights reserved to <span>The Cozy Corner</span>. 
-            developed by <span>Michael Magdy</span>.
-        </p>
-    </footer>
+    <?php include('components/footer.php') ?>
 </body>
 </html>
