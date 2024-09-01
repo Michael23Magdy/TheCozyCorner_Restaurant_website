@@ -20,34 +20,39 @@
     }
 
     function display_food($conn, $filter, $missing_message){
-        $sql = "
-            SELECT 
-                id, 
-                name, 
-                image_name,  
-                description,
-                price
-            FROM 
-                foods
-            WHERE {$filter};
-        ";
+        try {
 
-        $res = mysqli_query($conn, $sql);
-        if($res == true){
-            $no_rows = mysqli_num_rows($res);
-            if($no_rows > 0){
-                $SN = 1;
-                while($row=mysqli_fetch_assoc($res)){
-                    $id = $row['id'];
-                    $title = $row['name'];
-                    $price = $row['price'];
-                    $image_name = $row['image_name'];
-                    $description = $row['description'];
-                    print_food_card($title,$image_name,$price,$description,$id);
+            $sql = "
+                SELECT 
+                    id, 
+                    name, 
+                    image_name,  
+                    description,
+                    price
+                FROM 
+                    foods
+                WHERE {$filter};
+            ";
+    
+            $res = mysqli_query($conn, $sql);
+            if($res == true){
+                $no_rows = mysqli_num_rows($res);
+                if($no_rows > 0){
+                    $SN = 1;
+                    while($row=mysqli_fetch_assoc($res)){
+                        $id = $row['id'];
+                        $title = $row['name'];
+                        $price = $row['price'];
+                        $image_name = $row['image_name'];
+                        $description = $row['description'];
+                        print_food_card($title,$image_name,$price,$description,$id);
+                    }
+                } else {
+                    echo $missing_message;
                 }
-            } else {
-                echo $missing_message;
             }
+        } catch (mysqli_sql_exception $e){
+            echo $missing_message;
         }
     }                    
 ?>

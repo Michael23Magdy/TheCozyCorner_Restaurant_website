@@ -5,9 +5,9 @@
             <h1 class="websit_name">THE COZY<br>CORNER</h1>
         </div>
         <ul class="navigation">
-            <li><a href="" class="set"> Home </a></li>
-            <li><a href="" class="set"> Food Menu </a></li>
-            <li><a href="" class="set"> Categories</a></li>
+            <li><a href="<?php echo SITE_URL?>" class="set"> Home </a></li>
+            <li><a href="<?php echo SITE_URL."/food-menu.php"?>" class="set"> Food Menu </a></li>
+            <li><a href="<?php echo SITE_URL."/categories-menu.php"?>" class="set"> Categories</a></li>
         </ul>
         <div class="icons">
             <a href="#search-section"><i class="fa-solid fa-search"></i><span> Search</span></a>
