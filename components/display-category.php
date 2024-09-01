@@ -1,6 +1,6 @@
 <?php
     function print_category_card($title, $image_name, $description, $id){
-        $category_url = SITE_URL."admin/delete-food.php?id={$id}&name=food";
+        $category_url = SITE_URL."food-menu.php?category={$id}&category_name={$title}";
         echo "
             <div class=\"category-card card\"
                 style=\"background: url('images/categories/{$image_name}')\">
