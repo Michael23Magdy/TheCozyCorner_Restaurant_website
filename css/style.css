@@ -1,0 +1,476 @@
+/* overall page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Primary-color-green: #556B2F;
+    --Primary-color-red: #dd4020;
+    --Primary-color-brown: #8B4513;
+    --accent-color-white: #f2f3ed;
+    --accent-color-yellow: #DAA520;
+    --accent-color-navy: #2C3E50;
+    --food-card-witth: 250px;
+    --category-card-witth: 300px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 1240px) {
+    .container {
+        width: 950px;
+    }
+}
+
+@media (max-width: 991px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 550px;
+    }
+}
+@media (max-width: 550px) {
+    .container {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+.set{
+    background-color: var(--accent-color-navy);
+    border: 2px solid var(--accent-color-navy);
+    color: var(--accent-color-white);
+}
+
+.unset{
+    background-color: var(--accent-color-white);
+    border: 2px solid var(--accent-color-navy);
+    color: var(--accent-color-navy);
+}
+/* overall end */
+/* welcome section */
+.welcome {
+    background: url('../images/welcome_2.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+/* header {
+    width: 100%;
+} */
+
+/* header start */
+header .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+header .brand {
+    display: flex;
+    align-items: center;
+}
+
+header .brand h1{
+    color: var(--Primary-color-green);
+    letter-spacing: -3px;
+}
+
+header .navigation {
+    list-style-type: none;
+    display: flex;
+    /* min-width: 420px; */
+}
+
+@media (max-width: 767px) {
+    header .navigation {
+        height: 40px;
+        margin: 15px 0px;
+    }
+    header .container {
+        justify-content: center;
+    }
+}
+
+header li a {
+    text-decoration: 0;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px black;
+}
+
+
+header li a {
+    background-color: var(--accent-color-white);
+    border: 2px solid var(--accent-color-navy);
+    color: var(--accent-color-navy);
+}
+
+header li a:hover {
+    color: var(--Primary-color-green);
+    background-color: transparent;
+}
+
+header li:first-child a {
+    border-top-left-radius: 50px ;
+    border-bottom-left-radius: 50px ;
+}
+header li:last-child a {
+    border-top-right-radius: 50px ;
+    border-bottom-right-radius: 50px ;
+}
+
+header .logo {
+    width: 150px;
+}
+
+header .icons a{
+    text-decoration: none;
+    color: var(--accent-color-navy);
+    text-align: center;
+    font-size: 23px;
+    padding: 10px 15px;
+    background-color: var(--accent-color-white);
+    border-radius: 50px;
+    border: solid 2px var(--accent-color-navy);
+    box-shadow: 3px 3px 5px black;
+}
+
+header .icons a:hover{
+    color: var(--accent-color-white);
+    background-color: var(--accent-color-navy);
+}
+/* header end */
+
+.welcome section {
+    padding: 15px;
+    height: calc(100vh - 200px);
+    display: flex;
+    align-items: left;
+}
+
+.welcome section h1 {
+    font-family: 'Sansita Swashed';
+    font-size: 70px;
+    color: var(--Primary-color-red);
+    margin: 20px;
+}
+
+@media (max-width: 767px) {
+    .welcome section h1 {
+        font-size: 40px;
+    }
+}
+.welcome section p {
+    display: inline;
+    font-size: 20px;
+    padding: 10px;
+    color: var(--accent-color-white);
+    background-color: var(--Primary-color-green);
+}
+
+.welcome section a:first-of-type {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--Primary-color-red);
+    color: var(--accent-color-white);
+    border-radius: 50px;
+    border: solid 4px var(--Primary-color-red);
+    font-size: 18px;
+    width: 150px;
+    text-align: center;
+    font-weight: bolder;
+}
+.welcome section a:last-of-type {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    background-color: transparent;
+    color: var(--Primary-color-red);
+    border-radius: 50px;
+    border: solid 4px var(--Primary-color-red);
+    font-size: 18px;
+    width: 150px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.call-for-action {
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+/* featured */
+.featured .container{
+    padding: 20px 2px;
+}
+
+.featured h2 {
+    text-align: center;
+    font-family: 'Sansita Swashed';
+    padding: 50px;
+    font-size: 40px;
+}
+
+.featured .cards {
+    display: grid;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.featured .food-cards {
+    grid-template-columns: repeat(auto-fit, minmax(var(--food-card-witth), 1fr));
+}
+
+.featured .category-cards {
+    grid-template-columns: repeat(auto-fit, minmax(var(--food-card-witth), 1fr));
+}
+
+.featured .cards .card {
+    background-image: url('../images/background1.jpg');
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    background-size: cover;
+    text-align: center;
+    border-radius: 20px;
+    max-width: 500px;
+}
+
+.featured .food-cards .food-card {
+    height: 300px;
+}
+
+.featured .category-cards .category-card {
+    height: 400px;
+}
+
+.featured .cards .card h3{
+    width: 100%;
+    font-size: 2.5em;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    top: 20%;
+}
+
+.featured .cards .card .details {
+    width: 100%;
+    border-radius: 20px;
+    align-self: center;
+    background: linear-gradient(to top, var(--accent-color-navy) 25%, transparent);
+    display: none;
+    padding: 15px;
+}
+.featured .food-cards .food-card .details {
+    height: 300px;
+}
+.featured .category-cards .category-card .details {
+    height: 400px;
+}
+
+.featured .category-cards .category-card>a {
+    width: 100%;
+}
+
+.featured .cards .card:hover .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: left;
+}
+
+.featured .cards .card:hover h3 {
+    display: none;
+}
+
+.featured .cards .card:hover .details .price {
+    color: white;
+    background-color: var(--Primary-color-green);
+    border-radius: 50px;
+    width: fit-content;
+    padding: 2px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.featured .cards .card:hover .details .des {
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.featured .cards .card:hover .details div a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px;
+    background-color: var(--Primary-color-green);
+    color: var(--accent-color-white);
+    border-radius: 50px;
+    border: solid 4px var(--Primary-color-green);
+    font-size: 16px;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 3px;
+}
+
+.qoute-section{
+    background-color: var(--accent-color-white);
+    padding-top: 60px;
+}
+.qoute-section .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.qoute-section .side-img {
+    width: 400px;
+}
+.qoute-section div {
+    align-self: center;
+}
+.qoute-section .qoute {
+    align-self: center;
+    font-size: 3.5em;
+    color: var(--Primary-color-green);
+    font-weight: bold;
+    font-family: 'Sansita Swashed';
+}
+
+.qoute-section form {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.qoute-section input[type="search"]{
+    font-size: 18px;
+    flex-grow: 1;
+    border-radius: 50px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+.qoute-section input[type="submit"] {
+    flex-basis: 100px;
+    border-radius: 50px;
+    /* background-color: var(--Primary-color-red); */
+}
+
+
+
+
+@media (max-width: 767px) {
+    .qoute-section .qoute {
+        font-size: 2.5em;
+        text-align: center;
+        justify-self: center;
+        width: 100%;
+    }
+}
+
+/* about us Section Styling */
+#about-us {
+    background: url('../images/section_bg_1.jpg') var(--accent-color-white);
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    height: fit-content;
+}
+
+
+#about-us .container {
+    text-align: center; 
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#about-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--Primary-color-green); 
+}
+
+#about-us p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--accent-color-white);
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+
+#about-us h3 {
+    font-size: 1.8em;
+    margin: 30px 0 10px;
+    color: var(--Primary-color-green);
+}
+
+#about-us .contact-info {
+    list-style: none;
+    padding: 0;
+    font-size: 1em;
+    color: var(--accent-color-white);
+}
+
+#about-us .contact-info li {
+    margin: 10px 0;
+}
+
+#about-us img {
+    width: 400px;
+    max-width: 100%;
+}
+/* end about us section */
+
+footer {
+    display: flex;
+    height: 50px;
+    background-color: var(--accent-color-navy);
+    color: var(--accent-color-white);
+    justify-content: center;
+    align-items: center;
+}
+
+footer span {
+    color: var(--accent-color-yellow);
+    font-weight: bold;
+}
