@@ -1,4 +1,7 @@
 <?php include('config/constants.php') ?>
+<?php include('components/display-food.php') ?>
+<?php include('components/display-category.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,51 +63,9 @@
         <div class="container">
             <h2> Featured Meals </h2>
             <div class="cards food-cards">
-                
-                <div class="food-card card">
-                    <h3>title</h3>
-                    <div class="details">
-                        <p class="price">$30.30</p>
-                        <p class="des">description</p>
-                        <div>
-                            <a href="">Order now</a>
-                            <a href="">Add to Order</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-card card">
-                    <h3>title</h3>
-                    <div class="details">
-                        <p class="price">$30.30</p>
-                        <p class="des">description</p>
-                        <div>
-                            <a href="">Order now</a>
-                            <a href="">Add to Order</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-card card">
-                    <h3>title</h3>
-                    <div class="details">
-                        <p class="price">$30.30</p>
-                        <p class="des">description</p>
-                        <div>
-                            <a href="">Order now</a>
-                            <a href="">Add to Order</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-card card">
-                    <h3>title</h3>
-                    <div class="details">
-                        <p class="price">$30.30</p>
-                        <p class="des">description</p>
-                        <div>
-                            <a href="">Order now</a>
-                            <a href="">Add to Order</a>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    display_food($conn, "featured = 1", "not available");
+                ?>
             </div>
         </div>
     </section>
@@ -126,14 +87,9 @@
         <div class="container">
             <h2> Featured Categories </h2>
             <div class="cards category-cards">
-                <div class="category-card card">
-                    <h3>title</h3>
-                    <a href="">
-                        <div class="details">
-                            <p class="des">description</p>
-                        </div>
-                    </a>
-                </div>
+                <?php
+                    display_category($conn, "featured = 1", "not available");
+                ?>
             </div>
         </div>
     </section>

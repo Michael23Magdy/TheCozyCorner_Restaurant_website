@@ -232,8 +232,9 @@ header .icons a:hover{
 
 
 /* featured */
+
 .featured .container{
-    padding: 20px 2px;
+    padding: 40px 2px;
 }
 
 .featured h2 {
@@ -258,8 +259,8 @@ header .icons a:hover{
 }
 
 .featured .cards .card {
-    background-image: url('../images/background1.jpg');
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-wrap: wrap;
     align-items: end;
@@ -278,12 +279,14 @@ header .icons a:hover{
 }
 
 .featured .cards .card h3{
-    width: 100%;
     font-size: 2.5em;
     padding: 10px;
     color: white;
     font-weight: bold;
     top: 20%;
+    width: fit-content;
+    margin: 0px auto;
+    text-shadow: 2px 2px 8px var(--accent-color-navy);
 }
 
 .featured .cards .card .details {
@@ -303,6 +306,7 @@ header .icons a:hover{
 
 .featured .category-cards .category-card>a {
     width: 100%;
+    text-decoration: none;
 }
 
 .featured .cards .card:hover .details {
@@ -337,14 +341,21 @@ header .icons a:hover{
     display: inline-block;
     text-decoration: none;
     padding: 8px;
-    background-color: var(--Primary-color-green);
-    color: var(--accent-color-white);
     border-radius: 50px;
     border: solid 4px var(--Primary-color-green);
     font-size: 16px;
     text-align: center;
     font-weight: bolder;
     margin-top: 3px;
+}
+
+.featured .cards .card:hover .details div a:first-child{
+    background-color: var(--Primary-color-green);
+    color: var(--accent-color-white);
+}
+.featured .cards .card:hover .details div a:last-child{
+    background-color: var(--accent-color-white);
+    color:var(--Primary-color-green);
 }
 
 .qoute-section{
