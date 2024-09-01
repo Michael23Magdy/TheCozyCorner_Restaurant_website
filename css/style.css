@@ -464,7 +464,7 @@ header .icons a:hover{
     background-color: var(--accent-color-white);
 }
 
-.featured .order-form input[type="submit"]{
+.featured .order-form input[type="button"]{
     background-color: var(--Primary-color-green);
     color: var(--accent-color-white);
 }

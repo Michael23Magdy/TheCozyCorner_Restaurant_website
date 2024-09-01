@@ -47,6 +47,7 @@
             $count = mysqli_num_rows($res);
             if($count==1){
                 $user = mysqli_fetch_assoc($res);
+                $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['stat'] = "Login Successful";
