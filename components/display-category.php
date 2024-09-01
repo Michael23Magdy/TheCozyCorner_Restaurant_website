@@ -1,9 +1,10 @@
 <?php
     function print_category_card($title, $image_name, $description, $id){
         $category_url = SITE_URL."food-menu.php?category={$id}&category_name={$title}";
+        $image_url = empty($image_name)? "https://placehold.co/300x400?text=No+Image": "images/categories/{$image_name}";
         echo "
             <div class=\"category-card card\"
-                style=\"background: url('images/categories/{$image_name}')\">
+                style=\"background: url('{$image_url}')\">
                 <h3>{$title}</h3>
                 <a href=\"{$category_url}\">
                     <div class=\"details\">

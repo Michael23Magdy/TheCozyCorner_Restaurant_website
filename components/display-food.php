@@ -3,9 +3,10 @@
         $order_now = SITE_URL."admin/delete-food.php?id={$id}&name=food";
         $add_to_order = SITE_URL."admin/update-food.php?id={$id}&name=food";
         if(empty($category_name)) $category_name = "no category selected";
+        $image_url = empty($image_name)? "https://placehold.co/250x300?text=No+Image": "images/food/{$image_name}";
         echo "
             <div class=\"food-card card\"
-                style=\"background: url('images/food/{$image_name}')\">
+                style=\"background: url('{$image_url}')\">
                 <h3>{$title}</h3>
                 <div class=\"details\">
                     <p class=\"price\">$ {$price}</p>
@@ -48,11 +49,11 @@
                         print_food_card($title,$image_name,$price,$description,$id);
                     }
                 } else {
-                    echo $missing_message;
+                    echo "<h2 style=\"color: #eee\">{$missing_message}</h2>";
                 }
             }
         } catch (mysqli_sql_exception $e){
-            echo $missing_message;
+            echo "<h2 style=\"color: #eee\">{$missing_message}</h2>";
         }
     }                    
 ?>
