@@ -481,6 +481,29 @@ header .icons a:hover{
 }
 
 
+.purchase-details .purchase {
+    
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--Primary-color-green);
+    border-radius: 20px;
+    color: var(--accent-color-white);
+}
+.purchase-details .purchase table {
+    width: 100%;
+}
+.purchase-details .purchase table td {
+    padding: 5px;
+    font-size: 20px;
+}
+.purchase-details .purchase ul {
+    padding-left: 30px;
+}
+
+
+
+
 .qoute-section{
     background-color: var(--accent-color-white);
     padding-top: 60px;
