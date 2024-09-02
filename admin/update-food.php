@@ -33,7 +33,7 @@
                 
                 <label for="title">Title</label>
                 <input required type="text" value="<?php echo $food['name']?>"
-                    name="title" id="title" class="input" placeholder="Enter New Category title">
+                    name="title" id="title" class="input" placeholder="Enter New Food title">
                 
                 <label for="description">Description</label>
                 <textarea name="description" id="description">
@@ -85,7 +85,7 @@
                 </div>
                 <br>
                 <div class="buttons">
-                    <input type="submit" value="update food" class="submit set">
+                    <input type="submit" value="update category" class="submit set">
                     <input type="reset" value="reset" class="reset unset">
                 </div>
             </form>
@@ -108,7 +108,7 @@
             $title = sanitize_input($_POST["title"]);
             $description = sanitize_input($_POST["description"]);
             $price = sanitize_input($_POST['price']);
-            $category_id = !empty($_POST['food_category']) ? sanitize_input($_POST['food_category']) : NULL;
+            $category_id = !empty($_POST['food_category']) ? sanitize_input($_POST['food_category']) : "";
             $featured = isset($_POST['featured-box'])? 1 : 0;
             $active = isset($_POST['active-box'])? 1 : 0;
             $image_name = "";       
@@ -149,7 +149,10 @@
             }
 
             $sql = "UPDATE foods 
-            SET name='{$title}',description='{$description}',price='{$price}', category_id='{$category_id}',featured='{$featured}',active='{$active}'";
+            SET name='{$title}',description='{$description}',price='{$price}',featured='{$featured}',active='{$active}'";
+            if(!empty($category_id)){
+                $sql = $sql. ", category_id='{$category_id}'";
+            }
             if(!empty($image_name)){
                 $sql = $sql.",image_name='{$image_name}'";
             }
@@ -171,9 +174,9 @@
         
             
         } catch (mysqli_sql_exception $e){
-            $_SESSION['stat'] = "Error: Couldn't Update category";
+            $_SESSION['stat'] = "Error: Couldn't Update food";
             $_SESSION['success'] = false;
-            header("location:".SITE_URL.'admin/update-category.php?id='.$id.'&name=categories');
+            header("location:".SITE_URL.'admin/update-food.php?id='.$id.'&name=categories');
         }
     }
 
