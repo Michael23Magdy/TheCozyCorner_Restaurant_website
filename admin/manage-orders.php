@@ -5,9 +5,10 @@
         <br>
         <div class="database">
             <div class="filters">
-                <a href="manage-orders.php?filter=Done" class="btn-done general-btns">Done</a>
-                <a href="manage-orders.php?filter=Pending" class="btn-pending general-btns">Pending</a>
-                <a href="manage-orders.php?filter=Cancel" class="btn-cancel general-btns">Canceled</a>
+                <a href="manage-orders.php?filter=Done&name=orders" class="btn-add general-btns">all</a>
+                <a href="manage-orders.php?filter=Done&name=orders" class="btn-done general-btns">Done</a>
+                <a href="manage-orders.php?filter=Pending&name=orders" class="btn-pending general-btns">Pending</a>
+                <a href="manage-orders.php?filter=Cancel&name=orders" class="btn-cancel general-btns">Canceled</a>
             </div>
             <table>
                 <thead>

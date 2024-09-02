@@ -1,9 +1,8 @@
 <?php include('components/sidebar_header.php') ?>
     <main>
-        <h2><i class="fa-duotone fa-solid fa-user"></i></i> Manage Admins</h2>
+        <h2><i class="fa-duotone fa-solid fa-user"></i></i> Manage users</h2>
         <br>
         <div class="database">
-            <a href="add-admin.php?name=admins" class="btn-add general-btns"> <i class="fa-solid fa-plus"></i> Add Admin</a>
             <table>
                 <thead>
                     <tr>
@@ -15,7 +14,7 @@
                 </thead>
                 <tbody>
                     <?php
-                        $sql = "SELECT user_id,username,email FROM users WHERE role='admin'";
+                        $sql = "SELECT user_id,username,email FROM users WHERE role='user'";
                         $res = mysqli_query($conn, $sql);
 
                         function print_admin_row($SN, $username, $email,$id){
@@ -46,7 +45,7 @@
                                 }
                             } else {
                                 echo "
-                                    <tr> <td colspan=\"6\" class=\"center_tbl_col\" style=\"color: #aaa;> no data added </td> <tr> 
+                                    <tr> <td colspan=\"4\" class=\"center_tbl_col\" style=\"color: #aaa\";> no data added </td> <tr> 
                                 ";
                             }
                         }

@@ -32,6 +32,7 @@
                 <li><a href="manage-categories.php?name=categories" <?php if(!empty($_GET['name']) && $_GET['name']== "categories") echo "class='current-page'"?>>Categories</a></li>
                 <li><a href="manage-food.php?name=food" <?php if(!empty($_GET['name']) && $_GET['name']== "food") echo "class='current-page'"?>>Food</a></li>
                 <li><a href="manage-orders.php?name=orders" <?php if(!empty($_GET['name']) && $_GET['name']== "orders") echo "class='current-page'"?>>Orders</a></li>
+                <li><a href="manage-users.php?name=users" <?php if(!empty($_GET['name']) && $_GET['name']== "users") echo "class='current-page'"?>>users</a></li>
                 <li><a href="../logout.php" >Logout</a></li>
             </ul>
         </aside>
