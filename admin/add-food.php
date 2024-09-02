@@ -1,4 +1,5 @@
-<?php include('components/sidebar_header.php') ?>
+<?php include('components/sidebar_header.php');
+    ob_start(); ?>
 
     <main>
         <h2><i class="fa-solid fa-bowl-food"></i> Add Food</h2>
@@ -47,7 +48,7 @@
                 </div>
                 <br>
                 <div class="buttons">
-                    <input type="submit" value="add category" class="submit set">
+                    <input type="submit" value="add food" class="submit set">
                     <input type="reset" value="reset" class="reset unset">
                 </div>
             </form>
@@ -128,6 +129,8 @@
             header("location:".SITE_URL.'admin/add-food.php?name=food');
         }
     }
+
+    ob_end_flush();
 ?>
 
 <?php include('Components/footer.php') ?>
