@@ -4,34 +4,29 @@
 ### Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Dashboard Features](#dashboard-features)
-3. [Website Features](#website-features)
-4. [Tech Stack](#tech-stack)
-5. [Installation](#installation)
-6. [Dashboard Usage](#dashboard-usage)
-7. [Website Usage](#website-usage)
-8. [Screenshots](#screenshots)
-9. [Contributing](#contributing)
-10. [License](#license)
-11. [Contact](#contact)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Installation](#installation)
+5. [Contributing](#contributing)
+6. [License](#license)
 
 ### ER Diagram
 
 ![ERD with colored entities (UML notation)](https://github.com/user-attachments/assets/6e9e8795-2662-4f30-af87-381001d37a93)
 
 
-### 1. Project Overview
+### Project Overview
 
 The Cozy Corner is a comprehensive restaurant management system that includes a user-friendly website for customers and a powerful dashboard for administrators. The website allows users to explore the menu, place orders, and make reservations, while the dashboard offers admins tools to manage categories, food items, orders, and users efficiently.
 
-### 2. Features
+### Features
 
 #### Website
 - **Home Page:** Welcomes users with a featured food section and navigation links to different parts of the site.
 - **Food Menu:** Displays all available food items with details like price, description, and an option to add items to the order.
 - **Categories Page:** Allows users to browse food items by category.
 - **Search Functionality:** Enables users to search for specific food items.
-- **Order Page:** Displays the current order, allowing users to adjust quantities or remove items.
+- **Order Page:** Displays the current order, allowing users to adjust quantities or remove items (Cart).
 
 #### Dashboard
 - **Admin Management:** Allows the creation, updating, and deletion of admin users.
@@ -41,7 +36,28 @@ The Cozy Corner is a comprehensive restaurant management system that includes a 
 - **Statistics Summary:** Displays key metrics and analytics about sales, orders, and customer behavior.
 - **User Management:** Allows the management of user accounts, including viewing and updating user details.
 
-### 3. Installation
+
+### Tech Stack
+
+The project uses the following technologies:
+
+- **Frontend:**
+  - **HTML & CSS:** For structuring and styling the web pages, including responsive design and animations.
+  - **JavaScript:** For dynamic content updates, interactive elements, localy storing Order box (Cart).
+  
+- **Backend:**
+  - **PHP:** Server-side scripting for handling requests, processing data, and managing sessions.
+  - **MySQL:** Database management for storing and retrieving data.
+
+- **Tools & Libraries:**
+  - **phpMyAdmin:** For managing the MySQL database.
+  - **Apache:** Used as the web server (via XAMPP or similar local server environments).
+  
+- **Version Control:**
+  - **Git:** For version control.
+  - **GitHub:** For repository hosting and project management.
+
+### Installation
 
 1. **Clone the Repository:**
    ```bash
@@ -56,31 +72,25 @@ The Cozy Corner is a comprehensive restaurant management system that includes a 
 3. **Configure the Environment:**
    - Ensure your server is running PHP, MySQL, and a web server like Apache or Nginx.
    - Adjust any environment-specific settings in the configuration files if needed.
+   - Place the project files in the server's root directory (e.g., htdocs for XAMPP).
+   - Start the Apache and MySQL services.ww
+
 
 4. **Run the Application:**
    - For the website: Access it through your web server using the appropriate URL.
    - For the dashboard: Navigate to the admin login page and enter the provided credentials.
   
 
+### Future Enhancements
 
-### Tech Stack
+- **Reservation System:** Add functionality for customers to reserve tables.
+- **Event Bookings:** Allow users to book events directly through the website.
+- **Newsletter Subscription:** Implement a subscription system for customers to receive regular updates and offers.
 
-The project uses the following technologies:
+### Contributing
 
-- **Frontend:**
-  - **HTML & CSS:** For structuring and styling the web pages, including responsive design and animations.
-  - **JavaScript:** For dynamic content updates, form validations, and interactive elements.
-  
-- **Backend:**
-  - **PHP:** Server-side scripting for handling requests, processing data, and managing sessions.
-  - **MySQL:** Database management for storing and retrieving data.
+Contributions are welcome! If you'd like to contribute, please fork the repository, make your changes, and submit a pull request. Ensure your code follows the existing style and conventions.
 
-- **Tools & Libraries:**
-  - **phpMyAdmin:** For managing the MySQL database.
-  - **Apache:** Used as the web server (via XAMPP or similar local server environments).
-  
-- **Version Control:**
-  - **Git:** For version control and collaboration.
-  - **GitHub:** For repository hosting and project management.
+### License
 
-
+This project is open-source and available under the MIT License.
