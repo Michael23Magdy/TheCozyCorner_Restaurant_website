@@ -40,8 +40,7 @@
 
                         function print_category_row($SN, $username, $total_price, $status, $date, $phone,$address,$id){
                             $url_dit = SITE_URL."admin/order-details.php?id={$id}&name=orders";
-                            $url_del ="";
-                            $url_upd ="";
+                            $url_stat = SITE_URL."admin/status-control.php?id={$id}&newstat=";
                             echo "
                                 <tr class=\"clickable-row\" data-href=\"{$url_dit}\">
                                     <td class=\"center_tbl_col\">{$SN}</td>
@@ -51,9 +50,11 @@
                                     <td>{$date}</td>
                                     <td>{$phone}</td>
                                     <td>{$address}</td>
-                                    <td class=\"center_tbl_col\">
-                                        <a href=\"{$url_upd}\"><i class=\"fa-solid fa-pen\"></i></a>
-                                        <a href=\"{$url_del}\"><i class=\"fa-solid fa-delete-left \"></i></a>
+                                    <td class=\"center_tbl_col status-control\" >
+                                        <a href=\"{$url_stat}Done\" class=\"done\"><i class=\"fa-solid fa-check\"></i></a>
+                                        <a href=\"{$url_stat}Pending\" class=\"pending\"><i class=\"fa-regular fa-clock\"></i></a>
+                                        <a href=\"{$url_stat}Cancel\" class=\"cancel\"><i class=\"fa-solid fa-ban\"></i></a>
+                                        <a href=\"{$url_stat}Delete\" class=\"delete\"><i class=\"fa-solid fa-delete-left \"></i></a>
                                     </td>
                                 </tr>
                             ";

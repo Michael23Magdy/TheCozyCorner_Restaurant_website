@@ -237,6 +237,29 @@ table tr td:last-child a:first-child i:hover{
     background-color: darkgreen;
 }
 
+table .status-control a i{
+    width: 15px;
+}
+
+table .status-control .done i {
+    background-color: green;
+}
+table .status-control .pending i {
+    background-color: orange;
+}
+table .status-control .pending:hover i {
+    background-color: rgb(223, 145, 0);
+}
+table .status-control .cancel i {
+    background-color: var(--Primary-color-red);
+}
+table .status-control .cancel:hover i {
+    background-color: rgb(219, 31, 31);
+}
+table .status-control .delete i {
+    background-color: red;
+}
+
 .form-container {
     width: 100%;
     display: flex;
