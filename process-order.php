@@ -23,7 +23,7 @@
         $address = $data['address'];
 
         $sql = "INSERT INTO orders (user_id, order_date,status , phone, address)
-                values ({$_SESSION['user_id']}, now(),'Ordered', '{$phone_number}', '{$address}')";
+                values ({$_SESSION['user_id']}, now(),'Pending', '{$phone_number}', '{$address}')";
         $res = mysqli_query($conn, $sql);
 
         if($res){

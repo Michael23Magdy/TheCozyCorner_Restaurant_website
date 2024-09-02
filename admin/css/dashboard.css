@@ -193,6 +193,10 @@ table th{
     font-size: 18px;
 }
 
+.clickable-row {
+    cursor: pointer;
+}
+
 table tr th:first-child{
     border-top-left-radius: 20px;
 }
@@ -349,10 +353,40 @@ form .unset{
     color: var(--accent-color-navy);
 }
 
+/* order details */
+.order-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
 
+.order-container h4 {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--Primary-color-green);
+    font-size: 20px;
+    color: var(--accent-color-white);
+}
 
+.order-container ul {
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 5px;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+.order-container li {
+    padding: 10px 20px;
+    background-color: var(--accent-color-navy);
+    color: var(--accent-color-white);
+    width: fit-content;
+    border-radius: 20px;
+}
 
+/* end order details  */
 /* end main content */
 
 /* start footer */

@@ -4,65 +4,96 @@
         <h2><i class="fa-solid fa-motorcycle"></i> Manage Orders</h2>
         <br>
         <div class="database">
-            <a href="" class="btn-add"> <i class="fa-solid fa-plus"></i> Add Order </a>
             <table>
                 <thead>
                     <tr>
                         <th>S.N.</th>
-                        <th>Username</th>
-                        <th>Email</th>
+                        <th>customer</th>
+                        <th>total price</th>
+                        <th>status</th>
+                        <th>date</th>
+                        <th>phone</th>
+                        <th>address</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Michael</td>
-                        <td>fake@email.com</td>
-                        <td>
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-delete-left"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Michael</td>
-                        <td>fake@email.com</td>
-                        <td>
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-delete-left "></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Michael</td>
-                        <td>fake@email.com</td>
-                        <td>
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-delete-left"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Michael</td>
-                        <td>fake@email.com</td>
-                        <td>
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-delete-left"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Michael</td>
-                        <td>fake@email.com</td>
-                        <td>
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-delete-left"></i>
-                        </td>
-                    </tr>
+                    <?php
+                        $sql = "
+                            SELECT 
+                                orders.order_id as order_id, 
+                                users.username as username, 
+                                orders.total_price as total_price,  
+                                orders.status as status, 
+                                orders.order_date as date,
+                                orders.phone,
+                                orders.address
+                            FROM 
+                                orders
+                            LEFT JOIN 
+                                users 
+                            ON 
+                                orders.user_id = users.user_id
+                            ORDER BY order_id DESC;
+                        ";
+                        $res = mysqli_query($conn, $sql);
+
+                        function print_category_row($SN, $username, $total_price, $status, $date, $phone,$address,$id){
+                            $url_dit = SITE_URL."admin/order-details.php?id={$id}&name=orders";
+                            $url_del ="";
+                            $url_upd ="";
+                            echo "
+                                <tr class=\"clickable-row\" data-href=\"{$url_dit}\">
+                                    <td class=\"center_tbl_col\">{$SN}</td>
+                                    <td>{$username}</td>
+                                    <td class=\"center_tbl_col\">{$total_price}</td>
+                                    <td class=\"center_tbl_col\">{$status}</td>
+                                    <td>{$date}</td>
+                                    <td>{$phone}</td>
+                                    <td>{$address}</td>
+                                    <td class=\"center_tbl_col\">
+                                        <a href=\"{$url_upd}\"><i class=\"fa-solid fa-pen\"></i></a>
+                                        <a href=\"{$url_del}\"><i class=\"fa-solid fa-delete-left \"></i></a>
+                                    </td>
+                                </tr>
+                            ";
+                        }
+                        
+                        if($res == true){
+                            $no_rows = mysqli_num_rows($res);
+                            if($no_rows > 0){
+                                $SN = 1;
+                                while($row=mysqli_fetch_assoc($res)){
+                                    $id = $row['order_id'];
+                                    $username = $row['username'];
+                                    $total_price = $row['total_price'];
+                                    $status = $row['status'];
+                                    $date = $row['date'];
+                                    $phone = $row['phone'];
+                                    $address = $row['address'];
+                                    print_category_row($SN++,$username,$total_price,$status,$date,$phone,$address,$id);
+                                }
+                            } else {
+                                echo "
+                                    <tr> <td colspan=\"8\" class=\"center_tbl_col\" style=\"color: #aaa;\"> no data added </td> <tr> 
+                                ";
+                            }
+                        }
+                    ?>
+                
+                    
                 </tbody>
             </table>
         </div>
     </main>
-
+    <script>
+        // Attach click event to each row with the class "clickable-row"
+        document.querySelectorAll('.clickable-row').forEach(row => {
+            row.addEventListener('click', () => {
+                // Navigate to the URL specified in the data-href attribute
+                window.location.href = row.dataset.href;
+            });
+        });
+    </script>
+                    
 <?php include('components/footer.php') ?>
