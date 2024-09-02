@@ -4,6 +4,11 @@
         <h2><i class="fa-solid fa-motorcycle"></i> Manage Orders</h2>
         <br>
         <div class="database">
+            <div class="filters">
+                <a href="manage-orders.php?filter=Done" class="btn-done general-btns">Done</a>
+                <a href="manage-orders.php?filter=Pending" class="btn-pending general-btns">Pending</a>
+                <a href="manage-orders.php?filter=Cancel" class="btn-cancel general-btns">Canceled</a>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -19,6 +24,7 @@
                 </thead>
                 <tbody>
                     <?php
+                        $filter = isset($_GET['filter'])? "WHERE status = '{$_GET['filter']}'":"";
                         $sql = "
                             SELECT 
                                 orders.order_id as order_id, 
@@ -34,6 +40,7 @@
                                 users 
                             ON 
                                 orders.user_id = users.user_id
+                            {$filter}
                             ORDER BY order_id DESC;
                         ";
                         $res = mysqli_query($conn, $sql);

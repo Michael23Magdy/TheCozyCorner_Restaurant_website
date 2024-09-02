@@ -161,15 +161,31 @@ main>h2 {
     animation: notification 5s ease-in-out;
     max-width: 380px;
 }
+.filters {
+    text-align: center;
+}
 
-.btn-add {
+.general-btns {
     display: inline-block;
     text-decoration: none;
-    background-color: blue;
     color: var(--accent-color-white);
     padding: 10px;
     border-radius: 100px;
     margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.btn-add {
+    background-color: blue;
+}
+.btn-done {
+    background-color: green;
+}
+.btn-pending {
+    background-color: orange;
+}
+.btn-cancel {
+    background-color: var(--Primary-color-red);
 }
 
 .database {

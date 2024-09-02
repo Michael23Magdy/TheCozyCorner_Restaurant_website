@@ -3,7 +3,7 @@
         <h2><i class="fa-duotone fa-solid fa-user"></i></i> Manage Admins</h2>
         <br>
         <div class="database">
-            <a href="add-admin.php?name=admins" class="btn-add"> <i class="fa-solid fa-plus"></i> Add Admin</a>
+            <a href="add-admin.php?name=admins" class="btn-add general-btns"> <i class="fa-solid fa-plus"></i> Add Admin</a>
             <table>
                 <thead>
                     <tr>

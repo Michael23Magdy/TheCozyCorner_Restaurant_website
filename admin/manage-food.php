@@ -3,7 +3,7 @@
         <h2><i class="fa-solid fa-bowl-food"></i> Manage Food</h2>
         <br>
         <div class="database">
-            <a href="add-food.php?name=food" class="btn-add"> <i class="fa-solid fa-plus"></i> Add Food</a>
+            <a href="add-food.php?name=food" class="btn-add general-btns"> <i class="fa-solid fa-plus"></i> Add Food</a>
             <table>
                 <thead>
                     <tr>
