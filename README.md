@@ -15,6 +15,10 @@
 10. [License](#license)
 11. [Contact](#contact)
 
+### ER Diagram
+
+![ERD with colored entities (UML notation)](https://github.com/user-attachments/assets/6e9e8795-2662-4f30-af87-381001d37a93)
+
 
 ### 1. Project Overview
 
