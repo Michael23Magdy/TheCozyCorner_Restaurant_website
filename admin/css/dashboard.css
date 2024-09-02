@@ -192,6 +192,37 @@ main>h2 {
     padding: 10px;
 }
 
+.summary-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+}
+
+.card-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: var(--accent-color-navy);
+    border-radius: 50px;
+    color: white;
+    box-shadow: 2px 3px 8px black;
+}
+
+.card-summary .statistic{
+    font-size: 40px;
+
+}
+
+.card-summary .statistic-name{
+    font-size: 18px;
+
+}
+
+
 table{
     width: 100%;
     border-collapse: collapse;
