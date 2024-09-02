@@ -4,7 +4,7 @@
         $image_url = empty($image_name)? "https://placehold.co/300x400?text=No+Image": "images/categories/{$image_name}";
         echo "
             <div class=\"category-card card\"
-                style=\"background: url('{$image_url}')\">
+                style=\"background: url('{$image_url}'); background-size: cover;\">
                 <h3>{$title}</h3>
                 <a href=\"{$category_url}\">
                     <div class=\"details\">

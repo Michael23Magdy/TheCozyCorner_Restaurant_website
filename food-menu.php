@@ -9,9 +9,9 @@
             return htmlspecialchars(trim($data));
         }
         $category_id = isset($_GET['category'])? " AND category_id = {$_GET['category']} ":"";
-        $category_id = sanitize_input($category_id);
+        // $category_id = sanitize_input($category_id);
         $search = isset($_GET['search'])? " AND ( name LIKE \"%{$_GET['search']}%\" OR description LIKE \"%{$_GET['search']}%\") ":""; 
-        $search = sanitize_input($search);
+        // $search = sanitize_input($search);
     ?>
     <section class="featured">
         <div class="container">

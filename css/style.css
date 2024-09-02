@@ -281,10 +281,12 @@ header .icons a:hover{
 }
 
 .featured .food-cards .food-card {
+    background-size: 300px;
     height: 300px;
 }
 
 .featured .category-cards .category-card {
+    background-size: 400px;
     height: 400px;
 }
 
