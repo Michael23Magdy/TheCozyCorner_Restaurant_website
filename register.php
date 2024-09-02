@@ -91,6 +91,11 @@
                     $_SESSION['success'] = true;
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
+                    $_SESSION['user_id'] = $user['user_id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['role'] = $user['role'];
+                    $_SESSION['stat'] = "Login Successful";
+                    $_SESSION['success'] = true;
                     header("location:".SITE_URL);
                 } else {
                     $_SESSION['stat'] = "Error: " . mysqli_stmt_error($stmt);
@@ -99,6 +104,7 @@
                     mysqli_close($conn);
                     header("location:".SITE_URL.'register.php');
                 }
+                
 
             } else {
                 $_SESSION['stat'] = $errors[0];
