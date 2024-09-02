@@ -85,7 +85,7 @@
                 </div>
                 <br>
                 <div class="buttons">
-                    <input type="submit" value="update category" class="submit set">
+                    <input type="submit" value="update food" class="submit set">
                     <input type="reset" value="reset" class="reset unset">
                 </div>
             </form>

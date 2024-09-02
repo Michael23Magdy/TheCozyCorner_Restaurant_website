@@ -15,8 +15,8 @@
                         Are Waiting for You
                     </h1>
                     <div class="call-for-action">
-                        <a href=""> Order Now</a>
-                        <a href=""> Learn More</a>
+                        <a href="<?php echo SITE_URL."food-menu.php"?>"> View Menu</a>
+                        <a href="#about-us"> Learn More</a>
                     </div>
                 </div>
             </div>
