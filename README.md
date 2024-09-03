@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/76b7a04e-6c68-424d-b555-9c2fc669bd08)
+
+![image](https://github.com/user-attachments/assets/d01f9bae-746a-4c3a-9f53-0ef01592101e)
 
 ## The Cozy Corner Restaurant Website
 
